@@ -1,17 +1,17 @@
-var Player = function() 
+var bullet = function() 
 {
 	this.image = document.createElement("img");
-	this.x = canvas.width/2;
-	this.y = canvas.height/2;
-	this.width = 159;
-	this.height = 163;
+	this.x = player.x;
+	this.y = player.y;
+	this.width = 5;
+	this.height = 5;
 
 
-	this.image.src = "hero.png";
+	this.image.src = "bullet.png";
 
 };
 
-Player.prototype.update = function(deltaTime)
+bullet.prototype.update = function(deltaTime)
 {
 	if( typeof(this.rotation) == "undefined" )
 		this.rotation = 0; // hang on, where did this variable come from
@@ -26,7 +26,7 @@ Player.prototype.update = function(deltaTime)
 	}
 }
 
-Player.prototype.draw = function()
+bullet.prototype.draw = function()
 {
 	context.save();
 		context.translate(this.x, this.y);
